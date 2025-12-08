@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-function DonationsDashboard({ current = 3500, goal = 10000 }) {
+function DonationsDashboard({ current = 0, goal = 25000, onDonate }) {
     const percentage = Math.min((current / goal) * 100, 100);
 
     return (
@@ -52,6 +52,7 @@ function DonationsDashboard({ current = 3500, goal = 10000 }) {
             {/* Donate Button */}
             <Button
                 variant="none"
+                onClick={onDonate}
                 style={{
                     position: "absolute",
                     right: 0,
@@ -64,16 +65,14 @@ function DonationsDashboard({ current = 3500, goal = 10000 }) {
                     borderRadius: 25,
                     padding: 0,
 
-                    // ✨ Background and color
                     background: "linear-gradient(180deg, #0CA2AD, #098F9B)",
                     color: "white",
 
-                    // ✨ Matching inset effects like the bar
                     border: "1.5px solid rgba(255,255,255,0.6)",
                     boxShadow: `
                         inset 0 1px 4px rgba(0,0,0,0.25),
                         inset 0 1px 10px rgba(255,255,255,0.25),
-                        0 4px 10px rgba(0,0,0,0.25)   /* outer soft shadow */
+                        0 4px 10px rgba(0,0,0,0.25)
                     `,
 
                     transition: "all 0.2s ease",
@@ -89,7 +88,7 @@ function DonationsDashboard({ current = 3500, goal = 10000 }) {
                     e.currentTarget.style.transform = "translateY(-50%)";
                 }}
                 onMouseDown={(e) => {
-                    e.currentTarget.style.transform = "translateY(-50%) scale(0.96)"; // small natural press
+                    e.currentTarget.style.transform = "translateY(-50%) scale(0.96)";
                 }}
                 onMouseUp={(e) => {
                     e.currentTarget.style.transform = "translateY(-50%)";
