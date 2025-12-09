@@ -10,7 +10,7 @@ export default function DonationRow({ title, description, image, onDonate }) {
                 <Col md={4} className="d-flex justify-content-center">
                     <img
                         src={image}
-                        alt={title}
+                        alt={`Visual representation related to ${title}`}
                         className="img-fluid rounded-3"
                         style={{
                             maxHeight: "220px",
@@ -38,9 +38,10 @@ export default function DonationRow({ title, description, image, onDonate }) {
                             }}
                         >
                             <Button
-                                variant="primary"
+                                variant="none"
+                                style={{ backgroundColor: "#8A6F55", borderColor: "#8A6F55" }}
+                                className="text-white px-4 py-2 rounded-3 fw-semibold mt-2"
                                 size="lg"
-                                className="px-4 py-2 rounded-3 fw-semibold mt-2"
                                 onClick={onDonate}
                             >
                                 Donate

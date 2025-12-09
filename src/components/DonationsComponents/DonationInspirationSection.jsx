@@ -79,12 +79,12 @@ export default function DonationInspirationSection() {
                     margin: "0 auto",
                 }}
             >
-                <h5
+                <h4
                     className="mb-3"
                     style={{ fontWeight: 700 }}
                 >
                     Watch the Project Overview
-                </h5>
+                </h4>
 
                 <div
                     style={{

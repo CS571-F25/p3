@@ -41,9 +41,9 @@ export default function MosqueDisplay() {
 
         {/* MAIN DESCRIPTION — STRUCTURED & SKIMMABLE */}
         <p
+          className="text-muted"
           style={{
             fontSize: "1.12rem",
-            color: "var(--text-muted)",
             lineHeight: "1.7",
             marginBottom: "2rem",
           }}
@@ -55,9 +55,9 @@ export default function MosqueDisplay() {
         </p>
 
         <p
+          className="text-muted"
           style={{
             fontSize: "1.12rem",
-            color: "var(--text-muted)",
             lineHeight: "1.7",
             marginBottom: "2rem",
           }}
@@ -68,9 +68,9 @@ export default function MosqueDisplay() {
         </p>
 
         <p
+          className="text-muted"
           style={{
             fontSize: "1.12rem",
-            color: "var(--text-muted)",
             lineHeight: "1.7",
           }}
         >

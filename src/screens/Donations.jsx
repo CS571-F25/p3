@@ -67,7 +67,7 @@ export default function Donations() {
                 title="General Donation"
                 description="Support the masjid's daily operations, utilities, maintenance, and community programs."
                 image={generalImg}
-                onDonate={() => openDonationForm("General Donation")}
+                onDonate={() => openDonationForm("General")}
             />
 
             <DonationRow
