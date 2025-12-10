@@ -8,6 +8,25 @@ import diyaaImg from "../assets/brotherdiyaa.jpg";
 
 const PRAYERS_TO_SHOW = ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"];
 
+const GALLERY_IMAGES = [
+  {
+    src: icmExterior,
+    alt: "Exterior of the Islamic Center of Madison next to UW–Madison campus",
+  },
+  {
+    src: icmInterior,
+    alt: "Prayer hall inside the Islamic Center of Madison",
+  },
+  {
+    src: quranImg,
+    alt: "Open Qur'an on a stand during a study circle",
+  },
+  {
+    src: diyaaImg,
+    alt: "Community members gathered for a program at the Islamic Center of Madison",
+  },
+];
+
 function to12Hour(time24) {
   if (!time24) return "";
   const [h, m] = time24.split(":");
@@ -59,6 +78,7 @@ export default function Home() {
         minHeight: "calc(100vh - 96px)",
       }}
     >
+      {/* HERO / INTRO */}
       <section
         style={{
           padding: "4rem 8vw 3rem",
@@ -73,7 +93,7 @@ export default function Home() {
         <p style={{ maxWidth: "40rem", lineHeight: 1.6 }}>
           Located next to the UW–Madison campus, the Islamic Center of Madison
           is a welcoming masjid for students, families, and visitors. Join us
-          for daily prayers, Jumu‘ah, and community programs.
+          for daily prayers, Jumu‘ah, classes, and community programs.
         </p>
         <p style={{ marginTop: "0.5rem", fontWeight: 500 }}>
           Address: 21 N Orchard St, Madison, WI 53715
@@ -100,7 +120,7 @@ export default function Home() {
               {dateInfo?.readable} — {metaInfo?.timezone}
               <br />
               <span style={{ fontSize: "0.85rem", color: "#555" }}>
-                Times provided by the AlAdhan prayer times.
+                Times provided by the AlAdhan prayer times API.
               </span>
             </p>
 
@@ -150,15 +170,26 @@ export default function Home() {
           <div style={{ flex: "1 1 320px", minWidth: "280px" }}>
             <h2>About the Masjid</h2>
             <p style={{ lineHeight: 1.6 }}>
-              The Islamic Center of Madison serves as a hub for the Muslim
-              community in downtown Madison. We host the five daily prayers,
-              Jumu‘ah, educational programs, and community events throughout
-              the year.
+              The Islamic Center of Madison is the oldest of the three mosques
+              in Madison and has been a hub of activity for the local Muslim
+              community for decades. It was originally established by
+              university students who wanted a dedicated place for the five
+              daily prayers near campus.
             </p>
             <p style={{ lineHeight: 1.6 }}>
-              Whether you are a UW student, a long-time resident, or a visitor,
-              you are always welcome to pray with us and connect with the
-              Madison Muslim community.
+              Today the masjid serves a diverse community of UW–Madison
+              students, faculty, families, and long-time residents. Regular
+              programs include daily salah, Jumu‘ah, Qur&apos;an and Arabic
+              classes for children and adults, weekly Islamic school, and
+              study circles throughout the week.
+            </p>
+            <p style={{ lineHeight: 1.6 }}>
+              Beyond worship, the center runs a weekly food pantry in
+              partnership with local organizations, hosts women&apos;s
+              gatherings, and welcomes campus and interfaith groups who want
+              to learn about Islam. Many of these efforts are supported by
+              donations from local families, UW alumni, and friends of the
+              community around the world.
             </p>
           </div>
 
@@ -175,7 +206,7 @@ export default function Home() {
                 gap: "1.25rem",
               }}
             >
-              {[icmExterior, icmInterior, quranImg, diyaaImg].map((src, idx) => (
+              {GALLERY_IMAGES.map((img, idx) => (
                 <Card
                   key={idx}
                   className="shadow-sm"
@@ -186,8 +217,8 @@ export default function Home() {
                   }}
                 >
                   <Card.Img
-                    src={src}
-                    alt=""
+                    src={img.src}
+                    alt={img.alt}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -201,6 +232,97 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section
+        style={{
+          padding: "2.5rem 8vw 3rem",
+          backgroundColor: "#f0e7d8",
+        }}
+      >
+        <h2>Our History & Community in Madison</h2>
+        <p style={{ maxWidth: "52rem", lineHeight: 1.6 }}>
+          When Muslim students first arrived at UW–Madison in larger numbers,
+          they began praying together in borrowed classrooms and apartments.
+          From that small group, the Islamic Center of Madison grew into a
+          permanent masjid in the heart of downtown. Over the years, the
+          community has included people from many parts of the Muslim world as
+          well as Muslims who grew up in Wisconsin.
+        </p>
+        <p style={{ maxWidth: "52rem", lineHeight: 1.6 }}>
+          The center maintains close ties with UW–Madison student
+          organizations, such as the Muslim Students Association and other
+          cultural groups who regularly hold events, iftars, and educational
+          programs at the masjid. It is also an active partner in local
+          interfaith efforts, hosting open houses, school visits, and dialogue
+          events so neighbors can ask questions and get to know their Muslim
+          community.
+        </p>
+      </section>
+
+      <section style={{ padding: "2.5rem 8vw 4rem" }}>
+        <h2>Programs & Activities</h2>
+        <p style={{ maxWidth: "52rem", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+          Below are some of the regular activities that take place at the
+          Islamic Center of Madison throughout the year.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "1.25rem",
+          }}
+        >
+          <Card className="shadow-sm">
+            <Card.Body>
+              <Card.Title>Worship &amp; Learning</Card.Title>
+              <ul style={{ paddingLeft: "1.25rem", marginBottom: 0, lineHeight: 1.6 }}>
+                <li>Five daily prayers and Friday Jumu‘ah</li>
+                <li>Weekly Islamic school for children</li>
+                <li>Qur&apos;an and Arabic classes for youth and adults</li>
+                <li>Evening study circles and guest lectures</li>
+              </ul>
+            </Card.Body>
+          </Card>
+
+          <Card className="shadow-sm">
+            <Card.Body>
+              <Card.Title>Community Support</Card.Title>
+              <ul style={{ paddingLeft: "1.25rem", marginBottom: 0, lineHeight: 1.6 }}>
+                <li>Wednesday food pantry in partnership with local charities</li>
+                <li>Zakat and sadaqah collection and distribution</li>
+                <li>Counseling, marital services, and funeral support</li>
+                <li>Volunteers helping new students and families settle in Madison</li>
+              </ul>
+            </Card.Body>
+          </Card>
+
+          <Card className="shadow-sm">
+            <Card.Body>
+              <Card.Title>Ramadan &amp; Special Events</Card.Title>
+              <ul style={{ paddingLeft: "1.25rem", marginBottom: 0, lineHeight: 1.6 }}>
+                <li>Community iftars and nightly taraweeh prayers</li>
+                <li>Daily iftars for students and individuals away from family</li>
+                <li>Qur&apos;an competitions and youth programs</li>
+                <li>Eid prayers and celebrations open to the wider community</li>
+              </ul>
+            </Card.Body>
+          </Card>
+
+          <Card className="shadow-sm">
+            <Card.Body>
+              <Card.Title>Global Connections</Card.Title>
+              <ul style={{ paddingLeft: "1.25rem", marginBottom: 0, lineHeight: 1.6 }}>
+                <li>Fundraising drives for relief efforts overseas</li>
+                <li>Partnerships with national humanitarian organizations</li>
+                <li>Alumni and former community members supporting the center</li>
+                <li>Visitors from across the world stopping to pray and connect</li>
+              </ul>
+            </Card.Body>
+          </Card>
+        </div>
+      </section>
     </main>
   );
 }
+
