@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 export default function ContactMSA() {
     return (
         <Card
-            className="p-4 shadow-sm mt-4"
+            className="p-4 shadow-sm mt-4 msa-card"
             style={{
                 borderRadius: "12px",
             }}
