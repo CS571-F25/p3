@@ -56,7 +56,14 @@ export default function PrayerTimesSection() {
         backgroundColor: "#f0e7d8",
       }}
     >
-      <h2 style={{ marginBottom: "0.5rem" }}>Today&apos;s Salah Times</h2>
+      <h2
+        style={{
+          marginBottom: "0.5rem",
+          color: "#111111",
+        }}
+      >
+        Today&apos;s Salah Times
+      </h2>
 
       <div
         style={{
@@ -67,17 +74,31 @@ export default function PrayerTimesSection() {
         }}
       >
         <div style={{ flex: "2 1 320px", minWidth: "280px" }}>
-          {loading && <p>Loading prayer times…</p>}
+          {loading && (
+            <p style={{ color: "#111111" }}>Loading prayer times…</p>
+          )}
+
           {error && (
-            <p style={{ color: "darkred", maxWidth: "30rem" }}>{error}</p>
+            <p style={{ color: "#8B0000", maxWidth: "30rem" }}>{error}</p>
           )}
 
           {!loading && !error && timings && (
             <>
-              <p style={{ marginBottom: "1rem", fontSize: "0.95rem" }}>
+              <p
+                style={{
+                  marginBottom: "1rem",
+                  fontSize: "0.95rem",
+                  color: "#111111",
+                }}
+              >
                 {dateInfo?.readable} — {metaInfo?.timezone}
                 <br />
-                <span style={{ fontSize: "0.85rem", color: "#555" }}>
+                <span
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "#111111",
+                  }}
+                >
                   Times provided by the AlAdhan prayer times API.
                 </span>
               </p>
@@ -98,19 +119,22 @@ export default function PrayerTimesSection() {
                     style={{
                       backgroundColor: "#ffffff",
                       borderRadius: "18px",
-                      border: "1px solid #e0d6c6",
+                      border: "1px solid #d0c4b4",
                     }}
                   >
                     <Card.Body
                       className="text-center"
-                      style={{ padding: "0.85rem 0.5rem" }}
+                      style={{
+                        padding: "0.85rem 0.5rem",
+                        color: "#000000",
+                      }}
                     >
                       <Card.Title
                         style={{
                           fontSize: "0.95rem",
                           marginBottom: "0.25rem",
                           fontWeight: 700,
-                          color: "#222222",
+                          color: "#000000",
                         }}
                       >
                         {name}
@@ -120,7 +144,7 @@ export default function PrayerTimesSection() {
                           marginBottom: 0,
                           fontSize: "0.95rem",
                           fontWeight: 600,
-                          color: "#111111",
+                          color: "#000000",
                         }}
                       >
                         {to12Hour(timings[name])}
