@@ -115,7 +115,7 @@ export default function PrayerTimesSection() {
                 {PRAYERS_TO_SHOW.map((name) => (
                   <Card
                     key={name}
-                    className="shadow-sm"
+                    className="shadow-sm prayer-card"
                     style={{
                       backgroundColor: "#ffffff",
                       borderRadius: "18px",

@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* MUTED TEXT */
 .text-muted {
-  color: var(--text-muted) !important;
+  color: black !important;
 }
 
 /* FORMS */
@@ -130,4 +130,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .msa-card a:hover {
   color: #052c46;
+}
+
+/* Make prayer time cards high-contrast */
+.prayer-card {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.prayer-card .card-title,
+.prayer-card .card-text {
+  color: #000000 !important;
 }
