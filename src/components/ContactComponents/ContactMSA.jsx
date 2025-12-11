@@ -8,7 +8,7 @@ export default function ContactMSA() {
                 borderRadius: "12px",
             }}
         >
-            <h4 className="mb-3">UW–Madison Muslim Students Association (MSA)</h4>
+            <h2 className="mb-3">UW–Madison Muslim Students Association (MSA)</h2>
 
             <p style={{ maxWidth: "45rem", lineHeight: 1.6 }}>
                 The UW–Madison MSA is a student-led organization dedicated to
@@ -17,7 +17,7 @@ export default function ContactMSA() {
                 events, study circles, and social activities.
             </p>
 
-            <h6 className="mt-3">Website</h6>
+            <h3 className="mt-3">Website</h3>
             <a
                 href="https://win.wisc.edu/organization/msa"
                 target="_blank"
@@ -26,10 +26,10 @@ export default function ContactMSA() {
                 UW MSA on WIN (Wisconsin Involvement Network)
             </a>
 
-            <h6 className="mt-3">Email</h6>
+            <h3 className="mt-3">Email</h3>
             <p style={{ margin: 0 }}>msa@union.wisc.edu</p>
 
-            <h6 className="mt-3">Instagram</h6>
+            <h3 className="mt-3">Instagram</h3>
             <a
                 href="https://instagram.com/msauwmadison"
                 target="_blank"
